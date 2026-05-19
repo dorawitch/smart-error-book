@@ -1,0 +1,65 @@
+{
+  "dataset_total": 720,
+  "eligible_queries": 720,
+  "evaluated_queries": 368,
+  "metrics": {
+    "text_only_baseline": {
+      "sample_size": 368,
+      "precision_at_5_same_label": 0.9973,
+      "precision_at_5_same_knowledge": 0.9973,
+      "mrr_at_5": 1.0,
+      "novelty_rate_at_5": 0.0027,
+      "intra_list_diversity": 0.0677
+    },
+    "fused_score_baseline": {
+      "sample_size": 368,
+      "precision_at_5_same_label": 0.9973,
+      "precision_at_5_same_knowledge": 1.0,
+      "mrr_at_5": 1.0,
+      "novelty_rate_at_5": 0.0027,
+      "intra_list_diversity": 0.0698
+    },
+    "proposed_model": {
+      "sample_size": 368,
+      "precision_at_5_same_label": 0.0587,
+      "precision_at_5_same_knowledge": 1.0,
+      "mrr_at_5": 0.1957,
+      "novelty_rate_at_5": 1.0,
+      "intra_list_diversity": 0.1972
+    }
+  },
+  "sample_cases": [
+    {
+      "query": "向量 a=(3,-4), b=(-4,-3) 的数量积计算中，学生误把 cosθ 写成 sinθ，请纠正并求 a·b。",
+      "knowledge_point": "向量",
+      "error_type": "公式误用",
+      "recommendations": [
+        "向量投影题中，学生把 a 在 b 上的投影长度写成 |a|/|b|，已知 a=(-4,1), b=(3,0)，请纠正。",
+        "已知向量 a=(3,2)，学生求其模长时写成 |a|=3+2，请改正并计算。",
+        "已知 |a|=√(9)、|b|=√(10)，学生在夹角公式中分母少写一个模长，请改正。",
+        "在坐标运算中，学生把向量 (-1,-3)-(3,-4) 算成逐项相加，请重新计算并解释。",
+        "已知向量 a=(-4,5)、b=(3,3)，学生在计算 a·b 时把乘法和写错，请给出正确数量积。"
+      ]
+    },
+    {
+      "query": "点 P(-1,-1) 到直线 2x+6y+8=0 的距离计算中，学生漏写绝对值，请给出规范解。",
+      "knowledge_point": "解析几何",
+      "error_type": "步骤缺失",
+      "recommendations": [
+        "已知点 A(-1,-4)、B(8,3)，学生把斜率公式写成 (x2-x1)/(y2-y1)，请改正并求直线方程。"
+      ]
+    },
+    {
+      "query": "判断向量 a=(3,6) 与 b=(6,13) 是否共线时，学生只比较一个分量，请给出完整判定。",
+      "knowledge_point": "向量",
+      "error_type": "判断不完整",
+      "recommendations": [
+        "学生用一个分量判断向量 a=(9,2) 与 b=(1,6) 共线，请给出完整共线判定过程。",
+        "已知向量 a=(6,4)，学生求其模长时写成 |a|=6+4，请改正并计算。",
+        "判断向量 a=(6,0) 与 b=(6,0) 的夹角范围时，学生把锐角和钝角判断反了，请纠正。",
+        "已知向量 a=(m,2), b=(3,n) 满足 a⊥b，学生列方程时漏乘系数。令 m=-5, n=3 情况下说明正确列式方法。",
+        "设向量 a=(-6,3)，求 λ 使 a+λ(1,0) 与 (1,0) 垂直。学生漏列垂直条件，请补全。"
+      ]
+    }
+  ]
+}
